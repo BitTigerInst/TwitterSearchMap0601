@@ -8,11 +8,11 @@ In this project, we challenge you to use the Twitter API[1] and ElasticSearch[2]
 [Source From](https://www.bittiger.io/microproject/PfjuwSHuGjQJpsF6h)
 
 #Functionality:
-- User can input **location** and **a key word** in user interface
-- All tweets inside the selected area will be listed in a table
-- Only recent 100 tweets showed in the list and sorted by time created
-- Search results also show up in a **Google map** with **dropped pins**
-- User can click pin in Google map to get **full tweet**
+-User can input **location** and **a key word** in user interface
+-All tweets inside the selected area will be listed in a table
+-Only recent 100 tweets showed in the list and sorted by time created
+-Search results also show up in a **Google map** with **dropped pins**
+-User can click pin in Google map to get **full tweet**
 
 
 #Time Schedule
@@ -26,17 +26,17 @@ In this project, we challenge you to use the Twitter API[1] and ElasticSearch[2]
 | 6th Week | 10/03/16  | 10/09/16 | Fix bug and prepare presentation |
 
 #Used Technology
-- Front-end: AngularJS
-- Back-end: Node.js
-- Search Engine: ElasticSearch
-- API: Twitter Streaming API
+-Front-end: AngularJS
+-Back-end: Node.js
+-Search Engine: ElasticSearch
+-API: Twitter Streaming API
 
 #Resources:
-- 1.Elasticsearch中文教材[link](http://es.xiaoleilu.com/010_Intro/00_README.html)
-- 2.Elasticsearch tutorial[link](http://joelabrahamsson.com/elasticsearch-101/)
-- 3.Twitter Streaming API[link](https://dev.twitter.com/streaming/overview)
-- 4.Twitter Search Engine Video[link](https://www.bittiger.io/classpage/CXF82bcv52sn3osEa)
-- 5.Previous Project Example[link](https://github.com/BitTigerInst/ElasticSearch)
+-Elasticsearch中文教材[link](http://es.xiaoleilu.com/010_Intro/00_README.html)
+-Elasticsearch tutorial[link](http://joelabrahamsson.com/elasticsearch-101/)
+-Twitter Streaming API[link](https://dev.twitter.com/streaming/overview)
+-Twitter Search Engine Video[link](https://www.bittiger.io/classpage/CXF82bcv52sn3osEa)
+-Previous Project Example[link](https://github.com/BitTigerInst/ElasticSearch)
 
 #Project Information
 - category: full stack
