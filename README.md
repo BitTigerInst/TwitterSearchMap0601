@@ -43,6 +43,10 @@ In this project, we challenge you to use the Twitter API[1] and ElasticSearch[2]
 
 #会议记录
 -09/11/2016
--- Document[link](https://docs.google.com/document/d/1T9iq92_rfjaOUy3k12jiGXMbmwLh-Udvub59ASkGh6Y/edit)
+-- 项目设计Document[link](https://docs.google.com/document/d/1T9iq92_rfjaOUy3k12jiGXMbmwLh-Udvub59ASkGh6Y/edit)
+-- 关于前端开发[link](http://www.1point3acres.com/bbs/thread-104335-1-1.html)
+-- RESTful API介绍[link](https://www.zhihu.com/question/28557115)
+-- 关于http[link](http://download.csdn.net/detail/u013998657/9418970) 或上我们的slack，yanran有分享
+
 #License
 See the [LICENSE](https://opensource.org/licenses/MIT) file for license rights and limitations (MIT).
