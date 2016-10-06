@@ -1,0 +1,26 @@
+.coverPic{
+	text-align:center
+}
+.input_title{
+	text-align:center;
+}
+.input_message{
+	text-align:center;
+}
+#SearchContent{
+	display:block;
+	width:50%;
+	clear:both;
+	margin:auto;
+}
+#Latitude{
+	margin:1%;
+	width:17%;
+	display:inline;
+}
+#Longitude{
+	margin:1%;
+	width:17%;
+	display:inline;
+}
+

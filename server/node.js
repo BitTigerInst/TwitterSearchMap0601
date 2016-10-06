@@ -1,7 +1,8 @@
 /**
  * Created by myr on 10/2/16.
  */
-var elasticsearch = require('elasticsearch');
+//ElasticSearch Structure:{"user","image_url","geo","text","city", "state"}
+/*var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
     host: 'localhost:9200',
     log: 'trace'
@@ -22,20 +23,13 @@ client.ping({
 
 
 client.search({
-    q: 'pants'
-}).then(function (body) {
-    var hits = body.hits.hits;
-}, function (error) {
-    console.trace(error.message);
-});
-
-client.search({
-    index: 'twitter',
-    type: 'tweets',
+    index: 'tweet_search',
+    type: 'tweet_info',
     body: {
         query: {
             match: {
-                body: 'elasticsearch'
+                text: 'is',
+                city:'Boston'
             }
         }
     }
@@ -43,4 +37,4 @@ client.search({
     var hits = resp.hits.hits;
 }, function (err) {
     console.trace(err.message);
-});
+});*/
