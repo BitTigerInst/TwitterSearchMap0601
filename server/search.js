@@ -8,7 +8,7 @@ client.search({
     body: {
         query: {
             bool:{
-                should:[
+                must:[
                     {match: {text: "sweet"}},
                     {match: {State: "TX"}}
                 ]

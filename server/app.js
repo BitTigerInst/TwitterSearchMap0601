@@ -1,60 +1,37 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var app = angular.module('myApp', ['elasticsearch'])
+/*angular.module.service('client', function(esFactory){
+    return esFactory({
+        host:'localhost:9200',
+        log:'trace'
+    })
+})*/
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+app.factory('EleSearch',['$q', 'esFactory', function($q, elasticseatch){
+    var client = "localhost:9200"
 
-var app = express();
+    var search = function(pl_city, pl_state, term) {
+        var query = {
+            bool:{
+                must:[
+                    {match: {text: term}},
+                    {match: {State: pl_state}},
+                    {match:{City: pl_city}}
+                ]
+            }
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
+        }
+        client.search({
+            index:'tweet_search',
+            type:'tweet_info',
+            body: {query:query}
+        }).then(function(result){
+            var ii = 0, hits_in, hits_out = [];
+            hits_in = (result.hits||{}).hits||[];
+            for (; ii < hits_in.length;ii++) {
+                hits_out.push(hits_in[ii]._source);
+            }
+        })
+    }
 
 
-module.exports = app;
+}])
