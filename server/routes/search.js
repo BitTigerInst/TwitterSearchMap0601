@@ -1,14 +1,19 @@
 /**
  * Created by myr on 10/8/16.
  */
-var client = require('./connect.js');
+ElasticSearchClient = require('elasticsearchclient');
 var Q  = require('q');
-var index = tweet_search;
-var type = tweet_info;
-function search(text, location) {
+var index = "tweet_search";
+var type = "tweet_info";
+var serverOptions = {
+    host:'localhost',
+    port:9200
+};
+var elasticSearchClient = new ElasticSearchClient(serverOptions);
+function performSearch(text, location) {
     var deferred = Q.defer();
     console.log("Request handler 'search' was called.");
-    var queryQbj = {
+    var queryObj = {
         query:{
             bool:{
                 must:[
@@ -18,7 +23,7 @@ function search(text, location) {
             }
         }
     }
-    client.search(index, type, queryObj)
+    elasticSearchClient.search(index, type, queryObj)
         .on('data', function(data){
             deferred.resolve(JSON.parse(data));
         })
@@ -30,5 +35,6 @@ function search(text, location) {
     return deferred.promise;
 
 }
-exports.search = search;
+exports.performSearch = performSearch;
+
 
