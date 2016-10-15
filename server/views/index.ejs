@@ -9,7 +9,27 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <script>
+        $(function(){
+            $('#myForm').submit(function(e){
+                e.preventDefault();
+                var data_val = {};
+                data_val.text=$('#query').val();
+                data_val.city =$('#location').val();
+                $.ajax({
+                    url:'/submit',
+                    data : data_val,
+                    type:'get',
+                    dataType : 'json',
+                    success: function(data) {
+                        console.log(data);
+                        $(".container").append("div").html(data);
+                    }
+                })
+            });
+        })
 
+    </script>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -38,26 +58,21 @@
     <h1><%= title %></h1>
     <p>Twitter search  <%= title %></p>
 
-    <div class="container">
+    <div class="container" ng-controller = "getResult" ng-submit = >
         <div class="col-md-12">
-            <form action="/search">
+            <form id = "myForm">
                 Query:<br>
-                <input class="form-control" type="text" name="query">
+                <input class="form-control" type="text" name="query" id = "query">
                 <br>
                 Location:<br>
-                <input class="form-control" type="text" name="location">
+                <input class="form-control" type="text" name="location" id = "location">
                 <br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id ="search_btn">
             </form>
         </div>
     </div>
 
   </body>
 <script>
-    $(function(){
-        $.get('/search', function(data){
-            console.log(data);
-        })
-    });
 </script>
 </html>

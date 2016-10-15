@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="server/public/stylesheets/index.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
-        $.('#submit_btn').onclick(function(){
+        $.("#submit_btn").onclick(function(){
             $.ajax({
                 'url' : "http://localhost:8000/search_res",
                 'data' : {"text" : $('#searchContent').val(), "city":$('#city').val(), "state":$('#state').val()},
